@@ -22,6 +22,8 @@ model Board {
 
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
+
+  @@map("board")
 }
 
 model List {
@@ -38,6 +40,7 @@ model List {
   updatedAt DateTime @updatedAt
 
   @@index([boardId])
+  @@map("list")
 }
 
 model Card {
@@ -53,6 +56,7 @@ model Card {
   updatedAt   DateTime @updatedAt
 
   @@index([listId])
+  @@map("card")
 }
 
 enum ACTION {
@@ -80,6 +84,8 @@ model AuditLog {
 
   createdAt   DateTime @default(now())
   updatedAt   DateTime  @updatedAt
+
+  @@map("auditLog")
 }
 
 model OrgLimit {
@@ -89,6 +95,10 @@ model OrgLimit {
 
   createdAt   DateTime @default(now())
   updatedAt   DateTime  @updatedAt
+
+  @@map("orglimit")
+
+
 }
 
 model OrgSubscription {
